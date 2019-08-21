@@ -23,18 +23,24 @@ html(lang="en")
 
     div.container
       div.starter-template
+        h4 REQUEST_ID
+        h2(id="requestid")
+
+        hr
+        
         h4 NODE_ENV
-        h2 #{environment.node}
+        h2(id="environment") #{environment.node}
 
         hr
 
         h4 INSTANCE
-        h2 #{environment.instance}
+        h2(id="instance") #{environment.instance}
 
         hr
 
         h4 PORT
-        h2 #{environment.port}
+        h2(id="port") #{environment.port}
 
     script(src="/jquery/jquery.min.js")
     script(src="/bootstrap/js/bootstrap.min.js")
+    script(src="/js/site.js")
