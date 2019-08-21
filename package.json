@@ -1,0 +1,31 @@
+{
+  "name": "docker-nginx-express",
+  "version": "1.0.0",
+  "description": "A playground for Docker with Nginx and Express.",
+  "author": "Being Zero <beingzeroin@gmail.com>",
+  "keywords": [
+    "docker",
+    "docker-compose",
+    "node",
+    "express",
+    "nginx",
+    "load-balance",
+    "round-robin",
+    "live-reload"
+  ],
+  "main": "src/index.js",
+  "files": [
+    "src"
+  ],
+  "scripts": {
+    "lint": "eslint src/**/*.js",
+    "start": "nodemon src/index.js"
+  },
+  "dependencies": {
+    "express": "4.17.1",
+    "pug": "2.0.4",
+    "winston": "3.2.1"
+  },
+  "private": true,
+  "license": "MIT"
+}

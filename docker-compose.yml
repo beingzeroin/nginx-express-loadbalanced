@@ -1,0 +1,114 @@
+version: '2'
+
+services:
+
+  nginx:
+    build:
+      context: .
+      dockerfile: .docker/nginx.dockerfile
+    links:
+      - node1:node1
+      - node2:node2
+      - node3:node3
+      - node4:node4
+      - node5:node5
+      - node6:node6
+    depends_on:
+      - node1
+      - node2
+      - node3
+      - node4
+      - node5
+      - node6
+    ports:
+      - "8080:80"
+    networks:
+      - app-network
+
+  node1:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    working_dir: /usr/src/app
+    volumes:
+      - .:/usr/src/app
+    ports:
+      - "3000"
+    environment:
+      - INSTANCE=node1
+    networks:
+      - app-network
+
+  node2:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    working_dir: /usr/src/app
+    volumes:
+      - .:/usr/src/app
+    ports:
+      - "3000"
+    environment:
+      - INSTANCE=node2
+    networks:
+      - app-network
+
+  node3:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    working_dir: /usr/src/app
+    volumes:
+      - .:/usr/src/app
+    ports:
+      - "3000"
+    environment:
+      - INSTANCE=node3
+    networks:
+      - app-network
+
+  node4:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    working_dir: /usr/src/app
+    volumes:
+      - .:/usr/src/app
+    ports:
+      - "3000"
+    environment:
+      - INSTANCE=node4
+    networks:
+      - app-network
+
+  node5:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    working_dir: /usr/src/app
+    volumes:
+      - .:/usr/src/app
+    ports:
+      - "3000"
+    environment:
+      - INSTANCE=node5
+    networks:
+      - app-network
+
+  node6:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    working_dir: /usr/src/app
+    volumes:
+      - .:/usr/src/app
+    ports:
+      - "3000"
+    environment:
+      - INSTANCE=node6
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
