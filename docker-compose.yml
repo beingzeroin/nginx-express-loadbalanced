@@ -23,92 +23,62 @@ services:
     ports:
       - "8080:80"
     networks:
-      - app-network
+      - beingzero-lb
 
   node1:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    working_dir: /usr/src/app
-    volumes:
-      - .:/usr/src/app
+    build: src
     ports:
       - "3000"
     environment:
       - INSTANCE=node1
     networks:
-      - app-network
+      - beingzero-lb
 
   node2:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    working_dir: /usr/src/app
-    volumes:
-      - .:/usr/src/app
+    build: src
     ports:
       - "3000"
     environment:
       - INSTANCE=node2
     networks:
-      - app-network
+      - beingzero-lb
 
   node3:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    working_dir: /usr/src/app
-    volumes:
-      - .:/usr/src/app
+    build: src
     ports:
       - "3000"
     environment:
       - INSTANCE=node3
     networks:
-      - app-network
+      - beingzero-lb
 
   node4:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    working_dir: /usr/src/app
-    volumes:
-      - .:/usr/src/app
+    build: src
     ports:
       - "3000"
     environment:
       - INSTANCE=node4
     networks:
-      - app-network
+      - beingzero-lb
 
   node5:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    working_dir: /usr/src/app
-    volumes:
-      - .:/usr/src/app
+    build: src
     ports:
       - "3000"
     environment:
       - INSTANCE=node5
     networks:
-      - app-network
+      - beingzero-lb
 
   node6:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    working_dir: /usr/src/app
-    volumes:
-      - .:/usr/src/app
+    build: src
     ports:
       - "3000"
     environment:
       - INSTANCE=node6
     networks:
-      - app-network
+      - beingzero-lb
 
 networks:
-  app-network:
+  beingzero-lb:
     driver: bridge
