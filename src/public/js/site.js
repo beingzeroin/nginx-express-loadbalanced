@@ -17,7 +17,7 @@ $(document).ready(function(){
             dataType: "json",
             complete: setTimeout(function() {poll()}, 1000),
             timeout: 1000
-        })
+        });
     }
     poll();
 });

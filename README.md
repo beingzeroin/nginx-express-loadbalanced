@@ -1,7 +1,5 @@
 # docker-nginx-express
 
-[![License][license-badge]][license-url]
-
 > A playground for Docker with Nginx and Express.
 
 ![Preview](preview/docker-nginx-express.gif)
@@ -40,6 +38,12 @@ $ docker-compose up -d
 $ docker-compose down
 ```
 
+# Dynamically Adding Servers
+* Add servers to nginx.conf
+* Run this command
+```
+nginx -s reload
+```
 # Author
 
 [Being Zero](https://fb.me/being0)

@@ -6,13 +6,6 @@ services:
     build:
       context: .
       dockerfile: .docker/nginx.dockerfile
-    links:
-      - node1:node1
-      - node2:node2
-      - node3:node3
-      - node4:node4
-      - node5:node5
-      - node6:node6
     depends_on:
       - node1
       - node2
@@ -20,6 +13,8 @@ services:
       - node4
       - node5
       - node6
+    volumes: 
+      - ./.docker/nginx.conf:/etc/nginx/nginx.conf
     ports:
       - "8080:80"
     networks:
@@ -49,33 +44,6 @@ services:
       - "3000"
     environment:
       - INSTANCE=node3
-    networks:
-      - beingzero-lb
-
-  node4:
-    build: src
-    ports:
-      - "3000"
-    environment:
-      - INSTANCE=node4
-    networks:
-      - beingzero-lb
-
-  node5:
-    build: src
-    ports:
-      - "3000"
-    environment:
-      - INSTANCE=node5
-    networks:
-      - beingzero-lb
-
-  node6:
-    build: src
-    ports:
-      - "3000"
-    environment:
-      - INSTANCE=node6
     networks:
       - beingzero-lb
 
